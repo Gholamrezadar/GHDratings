@@ -1,4 +1,5 @@
 import { Inter } from "next/font/google";
+import { useState } from "react";
 
 const geistSans = Inter({
   variable: "--font-inter",
@@ -6,6 +7,12 @@ const geistSans = Inter({
 });
 
 export default function Home() {
+  const [showArcNames, setShowArcNames] = useState(true);
+  const [showPlots, setShowPlots] = useState(true);
+  const [showFillers, setShowFillers] = useState(true);
+  const [minRating, setMinRating] = useState(0.0);
+  const [maxRating, setMaxRating] = useState(10.0);
+
   return (
     <div className="font-inter">
       {/* Navbar */}
@@ -75,142 +82,51 @@ export default function Home() {
         </div>
 
         {/* Main content */}
-        <div className="flex flex-2 flex-col items-start justify-start gap-6">
+        <div className={`flex flex-2 flex-col items-start justify-start ${showArcNames || showPlots ? 'gap-6' : 'gap-1'}`}>
 
           {/* Arc Box */}
-          <div className="flex flex-col">
+          {Array.from(Array(24).keys()).map((i) => (
+            <div className="flex flex-col">
 
-            {/* Arc Name and Shevron */}
-            <div className="flex flex-row gap-2">
-              {/* svg shevron */}
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="size-6">
-                <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
-              </svg>
-              {/* Arc Name */}
-              <div className="flex">Kazekage Rescue Mission</div>
+              {/* Arc Name and Shevron */}
+              {showArcNames && (<div className="flex flex-row gap-2">
+                {/* svg shevron */}
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="size-6">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                </svg>
+                {/* Arc Name */}
+                <div className="flex pb-1">Kazekage Rescue Mission</div>
+              </div>
+              )}
+
+              {/* Arc Plot */}
+              {showPlots && (
+                <div className="flex font-light text-xs text-white/40 pl-8 pb-2">Naruto returns to Konoha after two-and-a-half years of training, just in time to help rescue the Fifth Kazekage from Akatsuki.</div>
+              )}
+
+              {/* Episode Boxes */}
+              <div className="flex flex-wrap pl-8 gap-1 text-sm">
+                {Array.from(Array(5).keys()).map((i) => (
+                  <>
+                    <div className="flex justify-center items-center w-12 h-12 rounded-sm bg-green-800">9.5</div>
+                    <div className="flex justify-center items-center w-12 h-12 rounded-sm bg-green-500">9.2</div>
+                    <div className="flex justify-center items-center w-12 h-12 rounded-sm bg-yellow-500">8.5</div>
+                    <div className="flex justify-center items-center w-12 h-12 rounded-sm bg-red-800">7.5</div>
+                    <div className="flex justify-center items-center w-12 h-12 rounded-sm bg-purple-800">6.5</div>
+                  </>
+                ))}
+              </div>
             </div>
-
-            {/* Arc Plot */}
-            <div className="flex font-light text-xs text-white/40 pl-8 pb-2">Naruto returns to Konoha after two-and-a-half years of training, just in time to help rescue the Fifth Kazekage from Akatsuki.</div>
-
-            {/* Episode Boxes */}
-            <div className="flex flex-wrap pl-8 gap-1 text-sm">
-              {Array.from(Array(4).keys()).map((i) => (
-                <>
-                  <div className="flex justify-center items-center w-12 h-12 rounded-sm bg-green-800">9.5</div>
-                  <div className="flex justify-center items-center w-12 h-12 rounded-sm bg-green-500">9.2</div>
-                  <div className="flex justify-center items-center w-12 h-12 rounded-sm bg-yellow-500">8.5</div>
-                  <div className="flex justify-center items-center w-12 h-12 rounded-sm bg-red-800">7.5</div>
-                  <div className="flex justify-center items-center w-12 h-12 rounded-sm bg-purple-800">6.5</div>
-                </>
-              ))}
-            </div>
-          </div>
-
-          {/* Arc Box */}
-          <div className="flex flex-col">
-
-            {/* Arc Name and Shevron */}
-            <div className="flex flex-row gap-2">
-              {/* svg shevron */}
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="size-6">
-                <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
-              </svg>
-              {/* Arc Name */}
-              <div className="flex">Tenchi Bridge Reconnaissance Mission</div>
-            </div>
-
-            {/* Arc Plot */}
-            <div className="flex font-light text-xs text-white/40 pl-8 pb-2">Naruto and a new version of Team 7 use information gained from Akatsuki to try to find Sasuke.</div>
-
-            {/* Episode Boxes */}
-            <div className="flex flex-wrap pl-8 gap-1 text-sm">
-              {Array.from(Array(4).keys()).map((i) => (
-                <>
-                  <div className="flex justify-center items-center w-12 h-12 rounded-sm bg-yellow-500">8.5</div>
-                  <div className="flex justify-center items-center w-12 h-12 rounded-sm bg-green-800">9.5</div>
-                  <div className="flex justify-center items-center w-12 h-12 rounded-sm bg-red-800">7.5</div>
-                  <div className="flex justify-center items-center w-12 h-12 rounded-sm bg-green-500">9.2</div>
-                  <div className="flex justify-center items-center w-12 h-12 rounded-sm bg-purple-800">6.5</div>
-                </>
-              ))}
-            </div>
-
-          </div>
-
-
-          {/* Arc Box */}
-          <div className="flex flex-col">
-
-            {/* Arc Name and Shevron */}
-            <div className="flex flex-row gap-2">
-              {/* svg shevron */}
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="size-6">
-                <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
-              </svg>
-              {/* Arc Name */}
-              <div className="flex">Tenchi Bridge Reconnaissance Mission</div>
-            </div>
-
-            {/* Arc Plot */}
-            <div className="flex font-light text-xs text-white/40 pl-8 pb-2">Naruto and a new version of Team 7 use information gained from Akatsuki to try to find Sasuke.</div>
-
-            {/* Episode Boxes */}
-            <div className="flex flex-wrap pl-8 gap-1 text-sm">
-              {Array.from(Array(4).keys()).map((i) => (
-                <>
-                  <div className="flex justify-center items-center w-12 h-12 rounded-sm bg-purple-800">6.5</div>
-                  <div className="flex justify-center items-center w-12 h-12 rounded-sm bg-green-800">9.5</div>
-                  <div className="flex justify-center items-center w-12 h-12 rounded-sm bg-green-500">9.2</div>
-                  <div className="flex justify-center items-center w-12 h-12 rounded-sm bg-yellow-500">8.5</div>
-                  <div className="flex justify-center items-center w-12 h-12 rounded-sm bg-red-800">7.5</div>
-                </>
-              ))}
-            </div>
-
-          </div>
-
-          {/* Arc Box */}
-          <div className="flex flex-col">
-
-            {/* Arc Name and Shevron */}
-            <div className="flex flex-row gap-2">
-              {/* svg shevron */}
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="size-6">
-                <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
-              </svg>
-              {/* Arc Name */}
-              <div className="flex">Tenchi Bridge Reconnaissance Mission</div>
-            </div>
-
-            {/* Arc Plot */}
-            <div className="flex font-light text-xs text-white/40 pl-8 pb-2">Naruto and a new version of Team 7 use information gained from Akatsuki to try to find Sasuke.</div>
-
-            {/* Episode Boxes */}
-            <div className="flex flex-wrap pl-8 gap-1 text-sm">
-              {Array.from(Array(4).keys()).map((i) => (
-                <>
-                  <div className="flex justify-center items-center w-12 h-12 rounded-sm bg-red-800">7.5</div>
-                  <div className="flex justify-center items-center w-12 h-12 rounded-sm bg-green-800">9.5</div>
-                  <div className="flex justify-center items-center w-12 h-12 rounded-sm bg-yellow-500">8.5</div>
-                  <div className="flex justify-center items-center w-12 h-12 rounded-sm bg-purple-800">6.5</div>
-                  <div className="flex justify-center items-center w-12 h-12 rounded-sm bg-green-500">9.2</div>
-                </>
-              ))}
-            </div>
-
-          </div>
-
-
+          ))}
 
         </div>
 
         {/* Settings pane */}
         <div className="flex flex-1 flex-col items-start justify-center text-sm">
           <div className="flex flex-col items-start gap-2 justify-center px-10">
-            <div className="cursor-pointer flex text-left bg-[#2A60D4] rounded-sm px-4 py-1">Arc Names</div>
-            <div className="cursor-pointer flex text-left bg-[#2A60D4] rounded-sm px-4 py-1">Plots</div>
-            <div className="cursor-pointer flex text-left bg-[#2A60D4] rounded-sm px-4 py-1">Fillers</div>
+            <div className="cursor-pointer flex text-left bg-[#2A60D4] rounded-sm px-4 py-1" onClick={() => setShowArcNames(prev => !prev)}>Arc Names</div>
+            <div className="cursor-pointer flex text-left bg-[#2A60D4] rounded-sm px-4 py-1" onClick={() => setShowPlots(prev => !prev)}>Plots</div>
+            <div className="cursor-pointer flex text-left bg-[#2A60D4] rounded-sm px-4 py-1" onClick={() => setShowFillers(prev => !prev)}>Fillers</div>
             <div className="cursor-pointer flex text-left bg-white/10 rounded-sm px-4 py-1">Collapse All</div>
             <div className="cursor-pointer flex text-left bg-white/10 rounded-sm px-4 py-1">Expand All</div>
             <div className="cursor-pointer flex text-left gap-2 justify-start items-center ">
