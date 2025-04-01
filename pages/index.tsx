@@ -1,3 +1,4 @@
+import ArcBox from "@/components/ArcBox";
 import { Inter } from "next/font/google";
 import { useState } from "react";
 
@@ -12,6 +13,182 @@ export default function Home() {
   const [showFillers, setShowFillers] = useState(true);
   const [minRating, setMinRating] = useState(0.0);
   const [maxRating, setMaxRating] = useState(10.0);
+  const [arcsData, setArcsData] = useState([
+    {
+      title: "Kazekage Rescue Mission",
+      plot: "Naruto returns to Konoha after two-and-a-half years of training, just in time to help rescue the Fifth Kazekage from Akatsuki.",
+      start: 1,
+      end: 5,
+  
+    },
+    {
+      title: "Tenchi Bridge Reconnaissance Mission",
+      plot: "Naruto and a new version of Team 7 use information gained from Akatsuki to try to find Sasuke.",
+      start: 6,
+      end: 10,
+    },
+    {
+      title: "Tenchi Bridge Reconnaissance Mission 2",
+      plot: "Naruto and a new version of Team 8 use information gained from Akatsuki to try to find Sasuke.",
+      start: 11,
+      end: 15,
+    },
+  ]);
+
+  const [episodesData, setEpisodesData] = useState([
+    {
+      "title": "Homecoming",
+      "rating": "6.2",
+      "vote_count": "1.7K",
+      "imdb_url": "https:\/\/www.imdb.com\/title\/tt0990165\/?ref_=ttep_ep_1",
+      "pic": "https:\/\/m.media-amazon.com\/images\/M\/MV5BZjQzNmU5MWMtMTg5MC00OWRlLTgzMGUtMzIxNGNjMzliMzkxXkEyXkFqcGc@._V1_QL75_UX500_CR0,47,500,281_.jpg",
+      "plot": "Naruto returns to Konoha after a two-and-a-half-year training journey with Jiraiya and is reunited with Sakura.",
+      "episode": 1,
+      "filler": true 
+    },
+    {
+      "title": "The Akatsuki Makes Its Move",
+      "rating": "9.8",
+      "vote_count": "1.2K",
+      "imdb_url": "https:\/\/www.imdb.com\/title\/tt0990163\/?ref_=ttep_ep_2",
+      "pic": "https:\/\/m.media-amazon.com\/images\/M\/MV5BOWZkMzgxMTktY2E1NC00MTM0LThkMzUtZDRhMDhiZDZiMzAzXkEyXkFqcGc@._V1_QL75_UX500_CR0,53,500,281_.jpg",
+      "plot": "Kakashi gives Naruto and Sakura a test to see how far they had improved. Meanwhile, two Akatsuki members, Deidara and Sasori, arrive at the entrance of the Sunagakure to capture the One-Tailed Shukaku's host, Gaara.",
+      "episode": 2,
+      "filler": false 
+    },
+    {
+      "title": "The Results of Training",
+      "rating": "5.9",
+      "vote_count": "1.1K",
+      "imdb_url": "https:\/\/www.imdb.com\/title\/tt0990167\/?ref_=ttep_ep_3",
+      "pic": "https:\/\/m.media-amazon.com\/images\/M\/MV5BNTNkMjNkZGMtNDY1OS00ZTBkLTkxYTItZjk5M2Q1NTU1ZDk4XkEyXkFqcGc@._V1_QL75_UX500_CR0,53,500,281_.jpg",
+      "plot": "Sakura and Naruto both demonstrate their newly acquired skills. Meanwhile, Deidara commences his attack on Sunagakure and is confronted by Gaara.",
+      "episode": 3,
+      "filler":true 
+    },
+    {
+      "title": "The Jinchuriki of the Sand",
+      "rating": "4.2",
+      "vote_count": "1.1K",
+      "imdb_url": "https:\/\/www.imdb.com\/title\/tt0990168\/?ref_=ttep_ep_4",
+      "pic": "https:\/\/m.media-amazon.com\/images\/M\/MV5BZTM1OTNmMmItOTZhZS00ZDY5LWFlZDQtODBkNjhiZjQxOTIyXkEyXkFqcGc@._V1_QL75_UX500_CR0,53,500,281_.jpg",
+      "plot": "Gaara is quick to detect Deidara's presence, and an aerial battle ensues with Deidara on his giant bird and Gaara atop sand.",
+      "episode": 4,
+      "filler": true 
+    },
+    {
+      "title": "The Kazekage Stands Tall",
+      "rating": "9.7",
+      "vote_count": "1K",
+      "imdb_url": "https:\/\/www.imdb.com\/title\/tt0990164\/?ref_=ttep_ep_5",
+      "pic": "https:\/\/m.media-amazon.com\/images\/M\/MV5BNDRiNjI0ZDItYzI2Yy00NDhhLWI5NTYtYmUwYmFkMjM3ODlmXkEyXkFqcGc@._V1_QL75_UX500_CR0,53,500,281_.jpg",
+      "plot": "Naruto and Sakura defeat Kakashi in the survival challenge. Tsunade assigns them to a three-man squad led by Kakashi, who tells them they are now his equals.",
+      "episode": 5,
+      "filler": false
+    },
+    {
+      "title": "Mission Cleared",
+      "rating": "9.1",
+      "vote_count": "1K",
+      "imdb_url": "https:\/\/www.imdb.com\/title\/tt0990166\/?ref_=ttep_ep_6",
+      "pic": "https:\/\/m.media-amazon.com\/images\/M\/MV5BZTg1YWMwY2MtNTNmMC00NWJmLWJmNzktMTNiZTMyYTFhM2IxXkEyXkFqcGc@._V1_QL75_UX500_CR0,53,500,281_.jpg",
+      "plot": "In order to protect his village from Deidara's explosive clay, Gaara uses his chakra to create a giant sand shield.",
+      "episode": 6,
+      "filler": false
+    },
+    {
+      "title": "Run, Kankuro",
+      "rating": "8.6",
+      "vote_count": "966",
+      "imdb_url": "https:\/\/www.imdb.com\/title\/tt0996817\/?ref_=ttep_ep_7",
+      "pic": "https:\/\/m.media-amazon.com\/images\/M\/MV5BOGRiODFkOTMtYmE1Mi00M2ZiLTkxYjYtZTA5NzgxNTFmMWQ4XkEyXkFqcGc@._V1_QL75_UX500_CR0,52,500,281_.jpg",
+      "plot": "Gaara, his strength completely exhausted, is whisked away by Deidara. Kankuro ignores Baki's efforts to stop him and immediately sets out in pursuit with a platoon to rescue Gaara.",
+      "episode": 7,
+      "filler": false
+    },
+    {
+      "title": "Team Kakashi, Deployed",
+      "rating": "7.6",
+      "vote_count": "932",
+      "imdb_url": "https:\/\/www.imdb.com\/title\/tt1191046\/?ref_=ttep_ep_8",
+      "pic": "https:\/\/m.media-amazon.com\/images\/M\/MV5BYTVjOTRiNGItNGZkMC00NzRkLWE4NzAtNjM2NmE4M2NmZmFmXkEyXkFqcGc@._V1_QL75_UX500_CR0,53,500,281_.jpg",
+      "plot": "On her way to the Sand Village, Temari encounters Kakashi and his team. Kakashi admonishes Naruto when he tries to rush ahead...",
+      "episode": 8,
+      "filler":true
+    },
+    {
+      "title": "The Jinchuriki's Tears",
+      "rating": "7.5",
+      "vote_count": "921",
+      "imdb_url": "https:\/\/www.imdb.com\/title\/tt1202309\/?ref_=ttep_ep_9",
+      "pic": "https:\/\/m.media-amazon.com\/images\/M\/MV5BOTE1NjMxMGUtNzk5ZS00YzA5LTkyZTAtOTc1ZDZjYTc0ZmE2XkEyXkFqcGc@._V1_QL75_UX500_CR0,53,500,281_.jpg",
+      "plot": "An urgent message from the Sand Village detailing the Akatsuki's kidnapping of the Kazekage reaches the Hidden Leaf Village. Tsunade wastes no time in ordering Team Kakashi to the Sand Village.",
+      "episode": 9,
+      "filler": true 
+    },
+    {
+      "title": "Sealing Jutsu: Nine Phantom Dragons",
+      "rating": "8.4",
+      "vote_count": "900",
+      "imdb_url": "https:\/\/www.imdb.com\/title\/tt1202302\/?ref_=ttep_ep_10",
+      "pic": "https:\/\/m.media-amazon.com\/images\/M\/MV5BNTEwZGIyMTMtNmZmNi00MGRmLWFmZGMtYTU5Njg2MTBiZjMyXkEyXkFqcGc@._V1_QL75_UX500_CR0,53,500,281_.jpg",
+      "plot": "The Sand ninja fight against time to treat Kankuro. Even the Sand's poison expert, Granny Chiyo, is baffled. The only hope lies with the reinforcements sent by Tsunade.",
+      "episode": 10,
+      "filler": false
+    },
+    {
+      "title": "The Medical Ninja's Student",
+      "rating": "7.6",
+      "vote_count": "897",
+      "imdb_url": "https:\/\/www.imdb.com\/title\/tt1202307\/?ref_=ttep_ep_11",
+      "pic": "https:\/\/m.media-amazon.com\/images\/M\/MV5BYTVhOTA0N2YtZWZlYi00ZDg3LWIyNzAtOWQ3MmMyZTNjNTUzXkEyXkFqcGc@._V1_QL75_UX500_CR0,52,500,281_.jpg",
+      "plot": "Sakura treats a critically ill Kankuro. After extensive training she's now a full-fledged Medic Ninja, and Sakura amazes everyone with her sure, steady hands.",
+      "episode": 11,
+      "filler": true 
+    },
+    {
+      "title": "The Retired Granny's Determination",
+      "rating": "7.8",
+      "vote_count": "885",
+      "imdb_url": "https:\/\/www.imdb.com\/title\/tt1202305\/?ref_=ttep_ep_12",
+      "pic": "https:\/\/m.media-amazon.com\/images\/M\/MV5BMWYxNWI0ZDctZGRlYS00NDBhLTlkNzctYjBlY2ZmZWQxNDhmXkEyXkFqcGc@._V1_QL75_UX500_CR0,53,500,281_.jpg",
+      "plot": "Pakkun finds the hideout of the Akatsuki. Team Kakashi and Temari prepare to set out to get Gaara back, but Temari is ordered to stay behind and help guard the village.",
+      "episode": 12,
+      "filler": true 
+    },
+    {
+      "title": "A Meeting With Destiny",
+      "rating": "8.0",
+      "vote_count": "915",
+      "imdb_url": "https:\/\/www.imdb.com\/title\/tt1202306\/?ref_=ttep_ep_13",
+      "pic": "https:\/\/m.media-amazon.com\/images\/M\/MV5BMzY2YTE0ZDEtMjY4MC00NDNiLTlhMDYtYWU2Nzg3ZmEyYjNjXkEyXkFqcGc@._V1_QL75_UX500_CR0,52,500,281_.jpg",
+      "plot": "Team Kakashi encounter Itachi Uchiha, who had dealt them a bitter defeat in the past. Kakashi warns everyone not to look into Itachi's Sharingan Eyes.",
+      "episode": 13,
+      "filler": false
+    },
+    {
+      "title": "Naruto's Growth",
+      "rating": "8.3",
+      "vote_count": "939",
+      "imdb_url": "https:\/\/www.imdb.com\/title\/tt1202311\/?ref_=ttep_ep_14",
+      "pic": "https:\/\/m.media-amazon.com\/images\/M\/MV5BZTQ2Y2MwYzAtZjI1My00NzgxLWE4NTMtZmQ1MDMwMjU2YWZmXkEyXkFqcGc@._V1_QL75_UX500_CR0,53,500,281_.jpg",
+      "plot": "Guy prepares to use a forbidden secret jutsu. Meanwhile, Naruto falls under Itachi's genjutsu, and all the anti-genjutsu training he underwent with Jiraiya races through Naruto's mind.",
+      "episode": 14,
+      "filler": false
+    },
+    {
+      "title": "The Secret Weapon is Called....",
+      "rating": "9.7",
+      "vote_count": "940",
+      "imdb_url": "https:\/\/www.imdb.com\/title\/tt1202310\/?ref_=ttep_ep_15",
+      "pic": "https:\/\/m.media-amazon.com\/images\/M\/MV5BYWViYjM3YjYtZDJmOS00NDQ1LTg5Y2MtOTI0YmQ4YzUwYjBlXkEyXkFqcGc@._V1_QL75_UX500_CR0,54,500,281_.jpg",
+      "plot": "Granny Chiyo and Sakura rescue Naruto from Itachi's genjutsu. Without a moment's delay, Kakashi begins a counterattack.",
+      "episode": 15,
+      "filler": false
+    },
+  ]);
+
+  const [collapsedList, setCollapsedList] = useState([false, false, false])
 
   return (
     <div className="font-inter">
@@ -81,43 +258,34 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Main content */}
-        <div className={`flex flex-2 flex-col items-start justify-start ${showArcNames || showPlots ? 'gap-6' : 'gap-1'}`}>
+        {/* Arcs content */}
+        <div className={`flex flex-2 flex-col items-start justify-start ${showArcNames ? 'gap-6' : 'gap-1'}`}>
 
           {/* Arc Box */}
-          {Array.from(Array(24).keys()).map((i) => (
-            <div className="flex flex-col">
+          {arcsData.map((arc, i) => {
+            let start = arc.start;
+            let end = arc.end;
+            let title = arc.title;
+            let plot = arc.plot;
+            let episodes = [];
+            for (let i = start; i <= end; i++) {
 
-              {/* Arc Name and Shevron */}
-              {showArcNames && (<div className="flex flex-row gap-2">
-                {/* svg shevron */}
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="size-6">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
-                </svg>
-                {/* Arc Name */}
-                <div className="flex pb-1">Kazekage Rescue Mission</div>
-              </div>
-              )}
+              // ignore fillers if showFillers is false
+              if(!showFillers && episodesData[i-1].filler)
+                continue;
 
-              {/* Arc Plot */}
-              {showPlots && (
-                <div className="flex font-light text-xs text-white/40 pl-8 pb-2">Naruto returns to Konoha after two-and-a-half years of training, just in time to help rescue the Fifth Kazekage from Akatsuki.</div>
-              )}
+              // ignore episodes outside of the range
+              const rating = parseFloat(episodesData[i-1].rating);
+              if(minRating > rating || maxRating < rating)
+                continue;
 
-              {/* Episode Boxes */}
-              <div className="flex flex-wrap pl-8 gap-1 text-sm">
-                {Array.from(Array(5).keys()).map((i) => (
-                  <>
-                    <div className="flex justify-center items-center w-12 h-12 rounded-sm bg-green-800">9.5</div>
-                    <div className="flex justify-center items-center w-12 h-12 rounded-sm bg-green-500">9.2</div>
-                    <div className="flex justify-center items-center w-12 h-12 rounded-sm bg-yellow-500">8.5</div>
-                    <div className="flex justify-center items-center w-12 h-12 rounded-sm bg-red-800">7.5</div>
-                    <div className="flex justify-center items-center w-12 h-12 rounded-sm bg-purple-800">6.5</div>
-                  </>
-                ))}
-              </div>
-            </div>
-          ))}
+              // add episode rating to episodes array
+              episodes.push(rating);
+            }
+            return (
+              <ArcBox showArcNames={showArcNames} showPlots={showPlots} arcTitle={title} arcPlot={plot} episodes={episodes} collapsed={collapsedList[i]} index={i} collapsedList={collapsedList} setCollapsedList={setCollapsedList} />
+            )
+          })}
 
         </div>
 
@@ -127,15 +295,15 @@ export default function Home() {
             <div className="cursor-pointer flex text-left bg-[#2A60D4] rounded-sm px-4 py-1" onClick={() => setShowArcNames(prev => !prev)}>Arc Names</div>
             <div className="cursor-pointer flex text-left bg-[#2A60D4] rounded-sm px-4 py-1" onClick={() => setShowPlots(prev => !prev)}>Plots</div>
             <div className="cursor-pointer flex text-left bg-[#2A60D4] rounded-sm px-4 py-1" onClick={() => setShowFillers(prev => !prev)}>Fillers</div>
-            <div className="cursor-pointer flex text-left bg-white/10 rounded-sm px-4 py-1">Collapse All</div>
-            <div className="cursor-pointer flex text-left bg-white/10 rounded-sm px-4 py-1">Expand All</div>
+            <div className="cursor-pointer flex text-left bg-white/10 rounded-sm px-4 py-1" onClick={() => setCollapsedList(prev => prev.map(x => true))}>Collapse All</div>
+            <div className="cursor-pointer flex text-left bg-white/10 rounded-sm px-4 py-1" onClick={() => setCollapsedList(prev => prev.map(x => false))}>Expand All</div>
             <div className="cursor-pointer flex text-left gap-2 justify-start items-center ">
               <div className="flex">Min Rating : </div>
-              <input type="number" value={0.0} className="bg-white/10 w-10 rounded-sm px-1 py-1" />
+              <input type="number" value={minRating} min={0.0} max={10.0} className="bg-white/10 w-10 rounded-sm px-1 py-1" onChange={(e) => setMinRating(parseFloat(e.target.value))} />
             </div>
             <div className="cursor-pointer flex text-left gap-2 justify-start items-center">
               <div className="flex">Max Rating : </div>
-              <input type="number" value={10.0} className="bg-white/10 w-10 rounded-sm px-1 py-1" />
+              <input type="number" value={maxRating} min={0.0} max={10.0} className="bg-white/10 w-10 rounded-sm px-1 py-1" onChange={(e) => setMaxRating(parseFloat(e.target.value))} />
             </div>
           </div>
         </div>
