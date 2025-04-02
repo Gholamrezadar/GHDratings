@@ -1,6 +1,20 @@
+import { Episode } from "@/lib/episode";
 import { useState } from "react";
+import Tooltip from "./Tooltip";
 
-export default function ArcBox({ arcTitle, arcPlot, episodes, showArcNames, showPlots, collapsed, index, collapsedList, setCollapsedList }: { arcTitle: string, arcPlot: string, episodes: number[], showArcNames: boolean, showPlots: boolean, collapsed: boolean, index: number, collapsedList: boolean[], setCollapsedList: Function }) {
+interface ArcBoxProps {
+    arcTitle: string;
+    arcPlot: string;
+    episodes: Episode[];
+    showArcNames: boolean;
+    showPlots: boolean;
+    collapsed: boolean;
+    index: number;
+    collapsedList: boolean[];
+    setCollapsedList: Function;
+}
+
+export default function ArcBox({ arcTitle, arcPlot, episodes, showArcNames, showPlots, collapsed, index, collapsedList, setCollapsedList }: ArcBoxProps) {
     const getColor = (rating: number) => {
         if (rating >= 9.5)
             return "bg-[#0A5E20]";
@@ -24,6 +38,10 @@ export default function ArcBox({ arcTitle, arcPlot, episodes, showArcNames, show
         setCollapsedList(newCollapsedList);
     }
 
+    function handleEpisodeClick(episode: Episode) {
+        console.log(episode);
+    }
+
     return (
         <>
             <div className="flex flex-col" >
@@ -43,19 +61,23 @@ export default function ArcBox({ arcTitle, arcPlot, episodes, showArcNames, show
 
                 {/* Arc Plot */}
                 {showArcNames && showPlots && !collapsed && (
-                    <div className="flex font-light text-xs text-white/40 pl-8 pb-2">Naruto returns to Konoha after two-and-a-half years of training, just in time to help rescue the Fifth Kazekage from Akatsuki.</div>
+                    <div className="flex font-light text-xs text-white/40 pl-8 pb-2">{arcPlot}</div>
                 )}
 
                 {/* Episode Boxes */}
                 {!collapsed && (
                     <div className="flex flex-wrap pl-8 gap-1 text-sm">
-                        {episodes.map((rating, i) => (
+                        {episodes.map((episode, i) => (
                             <>
-                                <div key={i} className={`flex justify-center items-center w-12 h-12 rounded-sm ${getColor(rating)}`}>{rating}</div>
+                                <Tooltip text={"Ep " + episode.episode + ". " + episode.title + " "}>
+                                    <a href={`https://9animetv.to/watch/naruto-shippuden-355?ep=${7881 + episode.episode}`} target="_blank" rel="noopener noreferrer">
+                                        <div key={i} onClick={() => handleEpisodeClick(episode)} className={`flex cursor-pointer justify-center items-center w-12 h-12 rounded-sm ${getColor(parseFloat(episode.rating))}`}>{episode.rating}</div>
+                                    </a>
+                                </Tooltip>
 
                             </>
                         ))}
-                        {episodes.length == 0 && (
+                        {episodes.length == 0 && showArcNames && (
                             <div className="flex flex-col items-center justify-center">
                                 <div className="text-center text-red-300/40 text-sm">No episodes with the current filters.</div>
                             </div>

@@ -1,1 +1,140 @@
-[{"Arc Name":"Kazekage Rescue Mission","Start":1," End":32," Summary":"Naruto returns to Konoha after two-and-a-half years of training, just in time to help rescue the Fifth Kazekage from Akatsuki."},{"Arc Name":"Tenchi Bridge Reconnaissance Mission","Start":33," End":53," Summary":"Naruto and a new version of Team 7 use information gained from Akatsuki to try to find Sasuke."},{"Arc Name":"Twelve Guardian Ninja","Start":54," End":71," Summary":"Naruto meets Sora, both of whom become entangled in a plot to destroy Konoha."},{"Arc Name":"Akatsuki Suppression Mission","Start":72," End":88," Summary":"To counter the growing threat of Akatsuki, Konoha tracks down two of its members who are prowling the Land of Fire."},{"Arc Name":"Three-Tails' Appearance","Start":89," End":112," Summary":"Konoha attempts to stop the Three-Tails from being acquired by Orochimaru or Akatsuki."},{"Arc Name":"Itachi Pursuit Mission","Start":113," End":126," Summary":"Sasuke and Naruto each assemble teams to make separate attempts to locate Sasuke's brother, Itachi Uchiha."},{"Arc Name":"Tale of Jiraiya the Gallant","Start":127," End":133," Summary":"Jiraiya infiltrates Amegakure in order to learn more about the leader of Akatsuki, Pain."},{"Arc Name":"Fated Battle Between Brothers","Start":134," End":143," Summary":"Sasuke initiates a fight to the death with his brother, Itachi, hoping that doing so will avenge the deaths of their clan."},{"Arc Name":"Six-Tails Unleashed","Start":144," End":151," Summary":"On their way home from their failed mission to find Itachi, Naruto and his team are diverted in order to fulfil Konoha's obligations to the Tsuchigumo clan."},{"Arc Name":"Pain's Assault","Start":152," End":175," Summary":"Pain attacks Konoha in order to capture Naruto."},{"Arc Name":"Past Arc: The Locus of Konoha","Start":176," End":196," Summary":"As Konoha starts to rebuild, its villagers reminisce about their memories of the past."},{"Arc Name":"Five Kage Summit","Start":197," End":214," Summary":"With Akatsuki in possession of nearly all nine tailed beasts, the Kage of the ninja villages gather to decide how to respond."},{"Arc Name":"Fourth Shinobi World War: Countdown","Start":215," End":260," Summary":"With the Fourth Shinobi World War declared, the Allied ninja and Akatsuki make opposing preparations for the approaching conflict."},{"Arc Name":"Fourth Shinobi World War: Confrontation","Start":261," End":321," Summary":"The Allied ninja struggle against Akatsuki's White Zetsu Army and the historic figures revived by the Impure World Reincarnation."},{"Arc Name":"Fourth Shinobi World War: Climax","Start":322," End":348," Summary":"After defeating the Impure World Reincarnation, the Allied ninja are left to deal with the combined forces of Madara and Obito Uchiha."},{"Arc Name":"Kakashi's Anbu Arc: The Shinobi That Lives in the Darkness","Start":349," End":361," Summary":"Kakashi Hatake's past is explored, connecting the end of Kakashi Gaiden to the start of Prologue \u2014 Land of Waves."},{"Arc Name":"Fourth Shinobi World War: Climax","Start":362," End":375," Summary":"After defeating the Impure World Reincarnation, the Allied ninja are left to deal with the combined forces of Madara and Obito Uchiha."},{"Arc Name":"Birth of the Ten-Tails' Jinch\u016briki","Start":376," End":431," Summary":"Using the nine tailed beasts captured by Akatsuki, Obito and Madara try to use the power of the resulting Ten-Tails to perform the Infinite Tsukuyomi."},{"Arc Name":"Jiraiya Shinobi Handbook: The Tale of Naruto the Hero","Start":432," End":450," Summary":"Trapped by the Infinite Tsukuyomi, Tsunade dreams about a book that Jiraiya could have written."},{"Arc Name":"Itachi Shinden Book: Light and Darkness","Start":451," End":458," Summary":"While the world falls victim to the Infinite Tsukuyomi, Sasuke reflects on the life of his brother, Itachi."},{"Arc Name":"Kaguya \u014ctsutsuki Strikes","Start":458," End":479," Summary":"The Infinite Tsukuyomi introduces a new threat, Kaguya \u014ctsutsuki, as well as an opportunity for Naruto and Sasuke to finally resolve their years of conflict."},{"Arc Name":"Childhood","Start":480," End":483," Summary":"Before they were heroes of the Fourth Shinobi World War, they were only children..."},{"Arc Name":"End","Start":481," End":500," Summary":"Wedding and shit!"}]
+[
+    {
+        "title": "Kazekage Rescue Mission",
+        "start": 1,
+        "end": 32,
+        "summary": "Naruto returns to Konoha after two-and-a-half years of training, just in time to help rescue the Fifth Kazekage from Akatsuki."
+    },
+    {
+        "title": "Tenchi Bridge Reconnaissance Mission",
+        "start": 33,
+        "end": 53,
+        "summary": "Naruto and a new version of Team 7 use information gained from Akatsuki to try to find Sasuke."
+    },
+    {
+        "title": "Twelve Guardian Ninja",
+        "start": 54,
+        "end": 71,
+        "summary": "Naruto meets Sora, both of whom become entangled in a plot to destroy Konoha."
+    },
+    {
+        "title": "Akatsuki Suppression Mission",
+        "start": 72,
+        "end": 88,
+        "summary": "To counter the growing threat of Akatsuki, Konoha tracks down two of its members who are prowling the Land of Fire."
+    },
+    {
+        "title": "Three-Tails' Appearance",
+        "start": 89,
+        "end": 112,
+        "summary": "Konoha attempts to stop the Three-Tails from being acquired by Orochimaru or Akatsuki."
+    },
+    {
+        "title": "Itachi Pursuit Mission",
+        "start": 113,
+        "end": 126,
+        "summary": "Sasuke and Naruto each assemble teams to make separate attempts to locate Sasuke's brother, Itachi Uchiha."
+    },
+    {
+        "title": "Tale of Jiraiya the Gallant",
+        "start": 127,
+        "end": 133,
+        "summary": "Jiraiya infiltrates Amegakure in order to learn more about the leader of Akatsuki, Pain."
+    },
+    {
+        "title": "Fated Battle Between Brothers",
+        "start": 134,
+        "end": 143,
+        "summary": "Sasuke initiates a fight to the death with his brother, Itachi, hoping that doing so will avenge the deaths of their clan."
+    },
+    {
+        "title": "Six-Tails Unleashed",
+        "start": 144,
+        "end": 151,
+        "summary": "On their way home from their failed mission to find Itachi, Naruto and his team are diverted in order to fulfil Konoha's obligations to the Tsuchigumo clan."
+    },
+    {
+        "title": "Pain's Assault",
+        "start": 152,
+        "end": 175,
+        "summary": "Pain attacks Konoha in order to capture Naruto."
+    },
+    {
+        "title": "Past Arc: The Locus of Konoha",
+        "start": 176,
+        "end": 196,
+        "summary": "As Konoha starts to rebuild, its villagers reminisce about their memories of the past."
+    },
+    {
+        "title": "Five Kage Summit",
+        "start": 197,
+        "end": 214,
+        "summary": "With Akatsuki in possession of nearly all nine tailed beasts, the Kage of the ninja villages gather to decide how to respond."
+    },
+    {
+        "title": "Fourth Shinobi World War: Countdown",
+        "start": 215,
+        "end": 260,
+        "summary": "With the Fourth Shinobi World War declared, the Allied ninja and Akatsuki make opposing preparations for the approaching conflict."
+    },
+    {
+        "title": "Fourth Shinobi World War: Confrontation",
+        "start": 261,
+        "end": 321,
+        "summary": "The Allied ninja struggle against Akatsuki's White Zetsu Army and the historic figures revived by the Impure World Reincarnation."
+    },
+    {
+        "title": "Fourth Shinobi World War: Climax",
+        "start": 322,
+        "end": 348,
+        "summary": "After defeating the Impure World Reincarnation, the Allied ninja are left to deal with the combined forces of Madara and Obito Uchiha."
+    },
+    {
+        "title": "Kakashi's Anbu Arc: The Shinobi That Lives in the Darkness",
+        "start": 349,
+        "end": 361,
+        "summary": "Kakashi Hatake's past is explored, connecting theend of Kakashi Gaiden to the start of Prologue \u2014 Land of Waves."
+    },
+    {
+        "title": "Fourth Shinobi World War: Climax",
+        "start": 362,
+        "end": 375,
+        "summary": "After defeating the Impure World Reincarnation, the Allied ninja are left to deal with the combined forces of Madara and Obito Uchiha."
+    },
+    {
+        "title": "Birth of the Ten-Tails' Jinch\u016briki",
+        "start": 376,
+        "end": 431,
+        "summary": "Using the nine tailed beasts captured by Akatsuki, Obito and Madara try to use the power of the resulting Ten-Tails to perform the Infinite Tsukuyomi."
+    },
+    {
+        "title": "Jiraiya Shinobi Handbook: The Tale of Naruto the Hero",
+        "start": 432,
+        "end": 450,
+        "summary": "Trapped by the Infinite Tsukuyomi, Tsunade dreams about a book that Jiraiya could have written."
+    },
+    {
+        "title": "Itachi Shinden Book: Light and Darkness",
+        "start": 451,
+        "end": 458,
+        "summary": "While the world falls victim to the Infinite Tsukuyomi, Sasuke reflects on the life of his brother, Itachi."
+    },
+    {
+        "title": "Kaguya \u014ctsutsuki Strikes",
+        "start": 458,
+        "end": 479,
+        "summary": "The Infinite Tsukuyomi introduces a new threat, Kaguya \u014ctsutsuki, as well as an opportunity for Naruto and Sasuke to finally resolve their years of conflict."
+    },
+    {
+        "title": "Childhood",
+        "start": 480,
+        "end": 483,
+        "summary": "Before they were heroes of the Fourth Shinobi World War, they were only children..."
+    },
+    {
+        "title": "End",
+        "start": 481,
+        "end": 500,
+        "summary": "Wedding and shit!"
+    }
+]
