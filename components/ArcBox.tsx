@@ -1,6 +1,7 @@
 import { Episode } from "@/lib/episode";
 import { useState } from "react";
 import Tooltip from "./Tooltip";
+import React from "react";
 
 interface ArcBoxProps {
     arcTitle: string;
@@ -12,9 +13,11 @@ interface ArcBoxProps {
     index: number;
     collapsedList: boolean[];
     setCollapsedList: Function;
+    aniwatch_url: string;
+    aniwatch_start: number;
 }
 
-export default function ArcBox({ arcTitle, arcPlot, episodes, showArcNames, showPlots, collapsed, index, collapsedList, setCollapsedList }: ArcBoxProps) {
+function ArcBox({ arcTitle, arcPlot, episodes, showArcNames, showPlots, collapsed, index, collapsedList, setCollapsedList, aniwatch_url, aniwatch_start }: ArcBoxProps) {
     const getColor = (rating: number) => {
         if (rating >= 9.5)
             return "bg-[#0A5E20]";
@@ -40,6 +43,8 @@ export default function ArcBox({ arcTitle, arcPlot, episodes, showArcNames, show
 
     function handleEpisodeClick(episode: Episode) {
         console.log(episode);
+        // open a new tab
+        window.open(episode.imdb_url, '_blank');
     }
 
     return (
@@ -66,12 +71,12 @@ export default function ArcBox({ arcTitle, arcPlot, episodes, showArcNames, show
 
                 {/* Episode Boxes */}
                 {!collapsed && (
-                    <div className="flex flex-wrap pl-8 gap-1 text-sm">
+                    <div className="flex flex-wrap pl-8 gap-0 text-sm">
                         {episodes.map((episode, i) => (
                             <>
-                                <Tooltip text={"Ep " + episode.episode + ". " + episode.title + " "}>
-                                    <a href={`https://9animetv.to/watch/naruto-shippuden-355?ep=${7881 + episode.episode}`} target="_blank" rel="noopener noreferrer">
-                                        <div key={i} onClick={() => handleEpisodeClick(episode)} className={`flex cursor-pointer justify-center items-center w-12 h-12 rounded-sm ${getColor(parseFloat(episode.rating))}`}>{episode.rating}</div>
+                                <Tooltip text={(episode.filler? "(Filler) " : "") +"Ep " + episode.episode + ". " + episode.title + " "}>
+                                    <a href={`${aniwatch_url}?ep=${aniwatch_start + episode.episode}`} target="_blank" rel="noopener noreferrer">
+                                        <div key={i} onContextMenu={(e) =>{e.preventDefault(); handleEpisodeClick(episode)}} className={`flex cursor-pointer justify-center items-center w-12 h-12 rounded-sm mx-0.5 my-0.5 ${getColor(parseFloat(episode.rating))}`}>{episode.rating}</div>
                                     </a>
                                 </Tooltip>
 
@@ -89,3 +94,5 @@ export default function ArcBox({ arcTitle, arcPlot, episodes, showArcNames, show
         </>
     );
 }
+
+export default React.memo(ArcBox);
