@@ -86,19 +86,20 @@ export default function ShippudenPage() {
       <Navbar />
 
       {/* Main */}
-      <div className="flex w-screen flex-row items-start justify-center max-w-6xl mx-auto px-4 py-4">
+      <div className="flex w-screen flex-col-reverse md:flex-row gap-3 md:gap-0 items-start justify-center max-w-6xl mx-auto px-4 py-4">
 
         {/* Show Details */}
-        <ShowDetailsComponent ShowDetails={ShowDetails} />
+        <div className="hidden xl:flex flex-1">
+          <ShowDetailsComponent ShowDetails={ShowDetails} />
+        </div>
 
         {/* Arcs content */}
-
         <ArcSection arcsData={arcsData} showArcNames={showArcNames} showPlots={showPlots} collapsedList={collapsedList} setCollapsedList={setCollapsedList} episodesData={episodesData} showFillers={showFillers} minRating={minRating} maxRating={maxRating} aniwatch_url={ShowDetails.aniwatch_url} aniwatch_start={ShowDetails.aniwatch_start} />
 
 
         {/* Settings pane */}
-        <div className="flex flex-1 flex-col items-start justify-center text-sm">
-          <div className="flex flex-col items-start gap-2 justify-center px-10">
+        <div className="flex-1 flex-col items-center mx-auto md:mx-0 justify-center text-sm">
+          <div className="flex flex-row flex-wrap md:flex-nowrap md:flex-col items-start gap-2 justify-center px-10">
             <div className={`cursor-pointer flex text-left transition-colors duration-250 ${showArcNames ? 'bg-[#2A60D4]' : 'bg-white/10'} ${showArcNames ? 'hover:bg-[#3c80e6]' : 'hover:bg-white/20'} rounded-sm px-4 py-1`} onClick={() => setShowArcNames(prev => !prev)}>Arc Names</div>
             <div className={`cursor-pointer flex text-left transition-colors duration-250 ${showPlots ? 'bg-[#2A60D4]' : 'bg-white/10'} ${showPlots ? 'hover:bg-[#3c80e6]' : 'hover:bg-white/20'} rounded-sm px-4 py-1`} onClick={() => setShowPlots(prev => !prev)}>Plots</div>
             <div className={`cursor-pointer flex text-left transition-colors duration-250 ${showFillers ? 'bg-[#2A60D4]' : 'bg-white/10'} ${showFillers ? 'hover:bg-[#3c80e6]' : 'hover:bg-white/20'} rounded-sm px-4 py-1`} onClick={() => setShowFillers(prev => !prev)}>Fillers</div>
@@ -115,7 +116,7 @@ export default function ShippudenPage() {
           </div>
 
           {/* Go Up Button */}
-          <div className="flex bg-transparent border border-white/40 rounded-full w-12 h-12 justify-center items-center fixed bottom-12 right-12 cursor-pointer" onClick={() => handleGoUp()}>
+          <div className="flex bg-black/40 backdrop-blur-xl border border-white/40 rounded-full w-12 h-12 justify-center items-center fixed bottom-12 right-12 cursor-pointer" onClick={() => handleGoUp()}>
             {/* down/up shevron */}
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className={`size-6 ${!isOnTop ? '-rotate-180' : ''}`}>
               <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
