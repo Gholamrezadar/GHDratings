@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function ArcBox({ arcTitle, arcPlot, episodes, showArcNames, showPlots, collapsed, index, collapsedList, setCollapsedList}: { arcTitle: string, arcPlot: string, episodes: number[], showArcNames: boolean, showPlots: boolean, collapsed: boolean, index: number, collapsedList: boolean[], setCollapsedList: Function }) {
+export default function ArcBox({ arcTitle, arcPlot, episodes, showArcNames, showPlots, collapsed, index, collapsedList, setCollapsedList }: { arcTitle: string, arcPlot: string, episodes: number[], showArcNames: boolean, showPlots: boolean, collapsed: boolean, index: number, collapsedList: boolean[], setCollapsedList: Function }) {
     const getColor = (rating: number) => {
         if (rating >= 9.5)
             return "bg-[#0A5E20]";
@@ -55,6 +55,11 @@ export default function ArcBox({ arcTitle, arcPlot, episodes, showArcNames, show
 
                             </>
                         ))}
+                        {episodes.length == 0 && (
+                            <div className="flex flex-col items-center justify-center">
+                                <div className="text-center text-red-300/40 text-sm">No episodes with the current filters.</div>
+                            </div>
+                        )}
                     </div>
                 )}
             </div>

@@ -19,7 +19,7 @@ export default function Home() {
       plot: "Naruto returns to Konoha after two-and-a-half years of training, just in time to help rescue the Fifth Kazekage from Akatsuki.",
       start: 1,
       end: 5,
-  
+
     },
     {
       title: "Tenchi Bridge Reconnaissance Mission",
@@ -44,7 +44,7 @@ export default function Home() {
       "pic": "https:\/\/m.media-amazon.com\/images\/M\/MV5BZjQzNmU5MWMtMTg5MC00OWRlLTgzMGUtMzIxNGNjMzliMzkxXkEyXkFqcGc@._V1_QL75_UX500_CR0,47,500,281_.jpg",
       "plot": "Naruto returns to Konoha after a two-and-a-half-year training journey with Jiraiya and is reunited with Sakura.",
       "episode": 1,
-      "filler": true 
+      "filler": true
     },
     {
       "title": "The Akatsuki Makes Its Move",
@@ -54,7 +54,7 @@ export default function Home() {
       "pic": "https:\/\/m.media-amazon.com\/images\/M\/MV5BOWZkMzgxMTktY2E1NC00MTM0LThkMzUtZDRhMDhiZDZiMzAzXkEyXkFqcGc@._V1_QL75_UX500_CR0,53,500,281_.jpg",
       "plot": "Kakashi gives Naruto and Sakura a test to see how far they had improved. Meanwhile, two Akatsuki members, Deidara and Sasori, arrive at the entrance of the Sunagakure to capture the One-Tailed Shukaku's host, Gaara.",
       "episode": 2,
-      "filler": false 
+      "filler": false
     },
     {
       "title": "The Results of Training",
@@ -64,7 +64,7 @@ export default function Home() {
       "pic": "https:\/\/m.media-amazon.com\/images\/M\/MV5BNTNkMjNkZGMtNDY1OS00ZTBkLTkxYTItZjk5M2Q1NTU1ZDk4XkEyXkFqcGc@._V1_QL75_UX500_CR0,53,500,281_.jpg",
       "plot": "Sakura and Naruto both demonstrate their newly acquired skills. Meanwhile, Deidara commences his attack on Sunagakure and is confronted by Gaara.",
       "episode": 3,
-      "filler":true 
+      "filler": true
     },
     {
       "title": "The Jinchuriki of the Sand",
@@ -74,7 +74,7 @@ export default function Home() {
       "pic": "https:\/\/m.media-amazon.com\/images\/M\/MV5BZTM1OTNmMmItOTZhZS00ZDY5LWFlZDQtODBkNjhiZjQxOTIyXkEyXkFqcGc@._V1_QL75_UX500_CR0,53,500,281_.jpg",
       "plot": "Gaara is quick to detect Deidara's presence, and an aerial battle ensues with Deidara on his giant bird and Gaara atop sand.",
       "episode": 4,
-      "filler": true 
+      "filler": true
     },
     {
       "title": "The Kazekage Stands Tall",
@@ -114,7 +114,7 @@ export default function Home() {
       "pic": "https:\/\/m.media-amazon.com\/images\/M\/MV5BYTVjOTRiNGItNGZkMC00NzRkLWE4NzAtNjM2NmE4M2NmZmFmXkEyXkFqcGc@._V1_QL75_UX500_CR0,53,500,281_.jpg",
       "plot": "On her way to the Sand Village, Temari encounters Kakashi and his team. Kakashi admonishes Naruto when he tries to rush ahead...",
       "episode": 8,
-      "filler":true
+      "filler": true
     },
     {
       "title": "The Jinchuriki's Tears",
@@ -124,7 +124,7 @@ export default function Home() {
       "pic": "https:\/\/m.media-amazon.com\/images\/M\/MV5BOTE1NjMxMGUtNzk5ZS00YzA5LTkyZTAtOTc1ZDZjYTc0ZmE2XkEyXkFqcGc@._V1_QL75_UX500_CR0,53,500,281_.jpg",
       "plot": "An urgent message from the Sand Village detailing the Akatsuki's kidnapping of the Kazekage reaches the Hidden Leaf Village. Tsunade wastes no time in ordering Team Kakashi to the Sand Village.",
       "episode": 9,
-      "filler": true 
+      "filler": true
     },
     {
       "title": "Sealing Jutsu: Nine Phantom Dragons",
@@ -144,7 +144,7 @@ export default function Home() {
       "pic": "https:\/\/m.media-amazon.com\/images\/M\/MV5BYTVhOTA0N2YtZWZlYi00ZDg3LWIyNzAtOWQ3MmMyZTNjNTUzXkEyXkFqcGc@._V1_QL75_UX500_CR0,52,500,281_.jpg",
       "plot": "Sakura treats a critically ill Kankuro. After extensive training she's now a full-fledged Medic Ninja, and Sakura amazes everyone with her sure, steady hands.",
       "episode": 11,
-      "filler": true 
+      "filler": true
     },
     {
       "title": "The Retired Granny's Determination",
@@ -154,7 +154,7 @@ export default function Home() {
       "pic": "https:\/\/m.media-amazon.com\/images\/M\/MV5BMWYxNWI0ZDctZGRlYS00NDBhLTlkNzctYjBlY2ZmZWQxNDhmXkEyXkFqcGc@._V1_QL75_UX500_CR0,53,500,281_.jpg",
       "plot": "Pakkun finds the hideout of the Akatsuki. Team Kakashi and Temari prepare to set out to get Gaara back, but Temari is ordered to stay behind and help guard the village.",
       "episode": 12,
-      "filler": true 
+      "filler": true
     },
     {
       "title": "A Meeting With Destiny",
@@ -262,6 +262,7 @@ export default function Home() {
         <div className={`flex flex-2 flex-col items-start justify-start ${showArcNames ? 'gap-6' : 'gap-1'}`}>
 
           {/* Arc Box */}
+
           {arcsData.map((arc, i) => {
             let start = arc.start;
             let end = arc.end;
@@ -271,12 +272,12 @@ export default function Home() {
             for (let i = start; i <= end; i++) {
 
               // ignore fillers if showFillers is false
-              if(!showFillers && episodesData[i-1].filler)
+              if (!showFillers && episodesData[i - 1].filler)
                 continue;
 
               // ignore episodes outside of the range
-              const rating = parseFloat(episodesData[i-1].rating);
-              if(minRating > rating || maxRating < rating)
+              const rating = parseFloat(episodesData[i - 1].rating);
+              if (minRating > rating || maxRating < rating)
                 continue;
 
               // add episode rating to episodes array
@@ -285,6 +286,7 @@ export default function Home() {
             return (
               <ArcBox showArcNames={showArcNames} showPlots={showPlots} arcTitle={title} arcPlot={plot} episodes={episodes} collapsed={collapsedList[i]} index={i} collapsedList={collapsedList} setCollapsedList={setCollapsedList} />
             )
+
           })}
 
         </div>
