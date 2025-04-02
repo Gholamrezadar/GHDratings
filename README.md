@@ -19,6 +19,15 @@ View the website here: [ghdratings.vercel.app](https://ghdratings.vercel.app/)
 - Customizable episode view (show arc names, show plots, show fillers)
 - *Scroll-to-top* button with memory :)
 
+## Tech
+- [React](https://reactjs.org/)
+- [Next.js](https://nextjs.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [TypeScript](https://www.typescriptlang.org/)
+
+## Data
+Data for this project is scraped from IMDB and animefillerlist.com. The data is stored in the `data` folder.
+
 ## Demos
 
 - Filtering in action
@@ -29,12 +38,10 @@ View the website here: [ghdratings.vercel.app](https://ghdratings.vercel.app/)
 
     ![demomobile](demo/demomobilelow.png)
 
+## Credits
+- [Anime-FillerList](https://www.animefillerlist.com/)
+- [9animeTV](https://9animetv.to/)
+- [IMDb](https://www.imdb.com/)
+- [tvcharts](https://tvcharts.co/)
 
-## Data
-Data for this project is scraped from IMDB and animefillerlist.com. The data is stored in the `data` folder.
-
-## Tech
-- [React](https://reactjs.org/)
-- [Next.js](https://nextjs.org/)
-- [Tailwind CSS](https://tailwindcss.com/)
-- [TypeScript](https://www.typescriptlang.org/)
+By Gholamreza Dar 2025
