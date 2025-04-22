@@ -1,8 +1,8 @@
 import ArcBox from "@/components/ArcBox";
 import { Inter } from "next/font/google";
 import { useEffect, useState } from "react";
-import narutoShippudenArcsJson from "@/data/naruto_shippuden_arcs.json"
-import narutoShippudenEpisodesJson from "@/data/naruto_shippuden_ratings.json"
+import narutoShippudenArcsJson from "@/data/naruto_arcs.json"
+import narutoShippudenEpisodesJson from "@/data/naruto_ratings.json"
 import { Arc } from "@/lib/arc";
 import { Episode } from "@/lib/episode";
 import Navbar from "@/components/Navbar";
