@@ -27,8 +27,8 @@ export default function Home() {
     "title_url": "https://www.animefillerlist.com/shows/naruto",
     "pic": "https://m.media-amazon.com/images/M/MV5BZTNjOWI0ZTAtOGY1OS00ZGU0LWEyOWYtMjhkYjdlYmVjMDk2XkEyXkFqcGc@.jpg",
     "url": "naruto"
-  }
-  )
+  });
+
   const [shippudenDetails, setShippudenDetails] = useState({
     "title": "Naruto: Shippuden",
     "rating": "8.7",
@@ -40,12 +40,21 @@ export default function Home() {
     "title_url": "https://www.animefillerlist.com/shows/naruto-shippuden",
     "pic": "https://m.media-amazon.com/images/M/MV5BNTk3MDA1ZjAtNTRhYS00YzNiLTgwOGEtYWRmYTQ3NjA0NTAwXkEyXkFqcGc@.jpg",
     "url": "shippuden"
-  }
-  )
+  });
 
+  const [jojosDetails, setJojosDetails] = useState({
+    "title": "JoJo's Bizarre Adventure",
+    "rating": "8.5",
+    "year": "2012-Now",
+    "vote_count": "46k",
+    "imdb_url": "https://www.imdb.com/title/tt2359704/",
+    "aniwatch_url": "https://9animetv.to/watch/jojos-bizarre-adventure-17864",
+    "aniwatch_start": 12352,
+    "title_url": "https://www.animefillerlist.com/shows/jojos-bizarre-adventure-tv",
+    "pic": "https://m.media-amazon.com/images/M/MV5BMzIyNzY4NTMtNmVhYS00OWFhLTkwMWMtOGFkNTdmNWU2ZDdiXkEyXkFqcGc@.jpg",
+    "url": "jojos"
 
-  
-
+  });
 
   return (
     <div className="font-inter">
@@ -58,9 +67,9 @@ export default function Home() {
         {/* Show Details */}
         <ShowDetailsComponentHome ShowDetails={narutoDetails} />
         <ShowDetailsComponentHome ShowDetails={shippudenDetails} />
+        <ShowDetailsComponentHome ShowDetails={jojosDetails} />
 
       </div>
-
     </div>
   );
 }
