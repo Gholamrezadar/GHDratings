@@ -43,8 +43,8 @@ function ShowDetailsComponent({ ShowDetails } : any) {
 
                 {/* Links */}
                 <div className="flex flex-row items-center justify-center w-full gap-4 pt-2 text-sm">
-                    <a href="https://www.imdb.com/title/tt0988824/" target="_blank" className="text-black rounded-md transition-colors duration-250 bg-amber-300 hover:bg-[#ffdb59] px-4 py-1">IMDB</a>
-                    <a href="https://9animetv.to/watch/naruto-shippuden-355" target="_blank" className="text-white rounded-md transition-colors duration-250 bg-[#5A2E98] hover:bg-[#704ba5] px-3 py-1">9 Anime</a>
+                    <a href={ShowDetails.imdb_url} target="_blank" className="text-black rounded-md transition-colors duration-250 bg-amber-300 hover:bg-[#ffdb59] px-4 py-1">IMDB</a>
+                    <a href={ShowDetails.aniwatch_url} target="_blank" className="text-white rounded-md transition-colors duration-250 bg-[#5A2E98] hover:bg-[#704ba5] px-3 py-1">9 Anime</a>
                 </div>
 
             </div>
