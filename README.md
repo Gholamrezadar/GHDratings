@@ -47,5 +47,6 @@ Data for this project is scraped from IMDB and animefillerlist.com. The data is 
 - [9animeTV](https://9animetv.to/)
 - [IMDb](https://www.imdb.com/)
 - [tvcharts](https://tvcharts.co/)
+- [Extracting Ratings notebook](https://colab.research.google.com/drive/1urPLCeFyxjLdKq4rMC4skWXnUgt1bY8p?usp=sharing)
 
 By Gholamreza Dar 2025
