@@ -6,7 +6,9 @@ function Navbar() {
             {/* Empty space */}
             <div className="hidden lg:flex flex-1 w-full"></div>
             <h1 className="text-2xl font-bold text-center text-white flex-1">
-                GHD<span className="font-light text-2xl"> Ratings</span>
+                <a href="/">
+                    GHD<span className="font-light text-2xl"> Ratings</span>
+                </a>
             </h1>
             {/* Github logo */}
             <div className="hidden lg:flex justify-end items-center flex-1 w-full">
